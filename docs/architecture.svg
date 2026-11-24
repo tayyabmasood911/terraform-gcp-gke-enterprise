@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+    <linearGradient id="gcpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285f4" />
+      <stop offset="100%" stop-color="#1a73e8" />
+    </linearGradient>
+    <linearGradient id="ebpfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea4335" />
+      <stop offset="100%" stop-color="#c5221f" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34a853" />
+      <stop offset="100%" stop-color="#1e8e3e" />
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbc05" />
+      <stop offset="100%" stop-color="#f29900" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#ffffff" />
+  <rect x="0" y="0" width="1200" height="720" fill="none" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- Subdued Grid -->
+  <g opacity="0.25">
+    <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200 M0 420 H1200 M0 480 H1200 M0 540 H1200 M0 600 H1200 M0 660 H1200" stroke="#f1f5f9" stroke-width="1" />
+    <path d="M100 0 V720 M200 0 V720 M300 0 V720 M400 0 V720 M500 0 V720 M600 0 V720 M700 0 V720 M800 0 V720 M900 0 V720 M1000 0 V720 M1100 0 V720" stroke="#f1f5f9" stroke-width="1" />
+  </g>
+
+  <!-- Header -->
+  <rect x="40" y="24" width="1120" height="68" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+  <text x="65" y="56" font-size="20" font-weight="700" fill="#0f172a">Google Cloud Platform • GKE Enterprise Production Platform</text>
+  <text x="65" y="78" font-size="12" font-weight="500" fill="#64748b">Datapath V2 (Cilium eBPF) • Workload Identity Federation • Shielded GKE Nodes • Private Cluster • Cloud NAT</text>
+
+  <rect x="990" y="42" width="150" height="32" rx="6" fill="#eff6ff" stroke="#4285f4" stroke-width="1.2" />
+  <circle cx="1005" cy="58" r="5" fill="#4285f4" />
+  <text x="1018" y="62" font-size="11" font-weight="600" fill="#1a73e8">GKE Enterprise</text>
+
+  <!-- Outer VPC Boundary -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="112" width="1120" height="526" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8" />
+    <path d="M40 112 h1120 v42 H40 z" fill="#f8fafc" rx="14" />
+    <rect x="40" y="144" width="1120" height="10" fill="#f8fafc" />
+    <line x1="40" y1="154" x2="1160" y2="154" stroke="#e2e8f0" stroke-width="1.5" />
+    <text x="65" y="139" font-size="15" font-weight="700" fill="#1e293b">Google Cloud VPC: vpc-gke-enterprise (Region: us-central1)</text>
+    <rect x="970" y="122" width="170" height="24" rx="4" fill="#eff6ff" stroke="#4285f4" stroke-width="1" />
+    <text x="982" y="138" font-size="11" font-weight="600" fill="#1a73e8">Secondary Pod &amp; Svc CIDRs</text>
+  </g>
+
+  <!-- Left: Network & Private Control Plane -->
+  <rect x="65" y="176" width="310" height="438" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="80" y="202" font-size="13" font-weight="700" fill="#0f172a">Network &amp; Control Plane</text>
+  <text x="80" y="218" font-size="10" fill="#64748b">Isolated Private Master</text>
+
+  <!-- Master API Card -->
+  <rect x="80" y="234" width="280" height="96" rx="8" fill="#ffffff" stroke="#4285f4" stroke-width="1.5" />
+  <rect x="92" y="248" width="120" height="22" rx="4" fill="url(#gcpGrad)" />
+  <text x="100" y="263" font-size="10" font-weight="700" fill="#ffffff">Private GKE Master</text>
+  <text x="92" y="288" font-size="10" fill="#475569">• Master CIDR: 172.16.0.0/28</text>
+  <text x="92" y="304" font-size="10" fill="#475569">• Authorized Networks: Admin CIDRs Only</text>
+  <text x="92" y="320" font-size="10" fill="#16a34a">• Release Channel: REGULAR (Auto-upgraded)</text>
+
+  <!-- Cloud NAT & Router -->
+  <rect x="80" y="342" width="280" height="90" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="92" y="364" font-size="11" font-weight="700" fill="#0f172a">Cloud Router &amp; Cloud NAT</text>
+  <text x="92" y="382" font-size="10" fill="#475569">• Zero Public IPs on Worker Nodes</text>
+  <text x="92" y="398" font-size="10" fill="#475569">• Dynamic SNAT Outbound Internet Egress</text>
+  <text x="92" y="414" font-size="10" fill="#16a34a">• Fully Managed Auto-Scaling Egress</text>
+
+  <!-- VPC Secondary Ranges -->
+  <rect x="80" y="444" width="280" height="150" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="92" y="466" font-size="11" font-weight="700" fill="#0f172a">VPC IP Allocation Plan</text>
+  <text x="92" y="486" font-size="10" font-weight="600" fill="#1e293b">Primary Node Subnet:</text>
+  <text x="100" y="502" font-size="9" fill="#475569">• 10.0.0.0/20 (Node IP addresses)</text>
+  <text x="92" y="520" font-size="10" font-weight="600" fill="#1e293b">Secondary Pod Range:</text>
+  <text x="100" y="536" font-size="9" fill="#475569">• 10.4.0.0/14 (262,144 Pod IPs)</text>
+  <text x="92" y="554" font-size="10" font-weight="600" fill="#1e293b">Secondary Service Range:</text>
+  <text x="100" y="570" font-size="9" fill="#475569">• 10.8.0.0/20 (4,096 ClusterIPs)</text>
+
+  <!-- Center: GKE Data Plane & Datapath V2 (Cilium) -->
+  <rect x="395" y="176" width="460" height="438" rx="10" fill="#ffffff" stroke="#4285f4" stroke-width="1.5" />
+  <path d="M395 176 h460 v36 H395 z" fill="#eff6ff" rx="10" />
+  <text x="415" y="200" font-size="14" font-weight="700" fill="#1a73e8">GKE Data Plane • Datapath V2 (Cilium eBPF Engine)</text>
+
+  <!-- Datapath V2 Card -->
+  <rect x="415" y="226" width="420" height="74" rx="8" fill="#fef2f2" stroke="#ea4335" stroke-width="1.2" />
+  <rect x="428" y="238" width="95" height="20" rx="4" fill="url(#ebpfGrad)" />
+  <text x="435" y="252" font-size="9" font-weight="700" fill="#ffffff">Datapath V2</text>
+  <text x="532" y="253" font-size="11" font-weight="700" fill="#991b1b">Kernel-Level eBPF Networking</text>
+  <text x="428" y="274" font-size="10" fill="#7f1d1d">• Replaces kube-proxy with eBPF programs for O(1) routing</text>
+  <text x="428" y="290" font-size="10" fill="#7f1d1d">• In-kernel Network Policy filtering with zero iptables bottleneck</text>
+
+  <!-- System Node Pool -->
+  <rect x="415" y="312" width="420" height="94" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="430" y="332" font-size="12" font-weight="700" fill="#0f172a">System Node Pool (e2-standard-2 • Min: 3)</text>
+  <text x="430" y="350" font-size="10" fill="#dc2626">• Taint: CriticalAddonsOnly=true:NoSchedule</text>
+  <text x="430" y="366" font-size="10" fill="#475569">• Workload: CoreDNS, Metric Server, Datapath eBPF agents</text>
+  <text x="430" y="382" font-size="10" fill="#16a34a">• Auto-Repair &amp; Auto-Upgrade Enabled (SLA 99.95%)</text>
+
+  <!-- Workload Node Pool -->
+  <rect x="415" y="418" width="420" height="182" rx="8" fill="#fafafa" stroke="#4285f4" stroke-width="1.2" />
+  <text x="430" y="440" font-size="12" font-weight="700" fill="#1a73e8">Workload Node Pool (e2-standard-4 • Autoscaling 3 to 10)</text>
+
+  <!-- Pod Cards inside workload pool -->
+  <rect x="430" y="452" width="185" height="72" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="440" y="470" font-size="10" font-weight="700" fill="#0f172a">Pod A (App Microservice)</text>
+  <text x="440" y="486" font-size="9" fill="#16a34a">✓ Workload Identity Token</text>
+  <text x="440" y="500" font-size="9" fill="#16a34a">✓ Non-root Container</text>
+  <text x="440" y="514" font-size="9" fill="#4285f4">✓ Shielded Node Attested</text>
+
+  <rect x="635" y="452" width="185" height="72" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="645" y="470" font-size="10" font-weight="700" fill="#0f172a">Pod B (Data Worker)</text>
+  <text x="645" y="486" font-size="9" fill="#16a34a">✓ Cloud Storage FUSE Mount</text>
+  <text x="645" y="500" font-size="9" fill="#16a34a">✓ Network Policy Enforced</text>
+  <text x="645" y="514" font-size="9" fill="#4285f4">✓ Ephemeral Storage Limit</text>
+
+  <rect x="430" y="534" width="390" height="54" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="442" y="552" font-size="10" font-weight="700" fill="#1e40af">Shielded GKE Node Architecture</text>
+  <text x="442" y="568" font-size="9" fill="#1e3a8a">• Secure Boot: Prevents unsigned kernel modules &amp; rootkits</text>
+  <text x="442" y="580" font-size="9" fill="#1e3a8a">• Integrity Monitoring: vTPM cryptographic runtime measurement</text>
+
+  <!-- Right: Identity & Cloud Operations -->
+  <rect x="875" y="176" width="265" height="438" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="892" y="202" font-size="13" font-weight="700" fill="#0f172a">Identity &amp; Cloud Ops</text>
+  <text x="892" y="218" font-size="10" fill="#64748b">Google Enterprise Suite</text>
+
+  <!-- Workload Identity Federation -->
+  <rect x="892" y="234" width="230" height="114" rx="8" fill="#ffffff" stroke="#34a853" stroke-width="1.5" />
+  <rect x="904" y="248" width="130" height="22" rx="4" fill="url(#shieldGrad)" />
+  <text x="912" y="263" font-size="10" font-weight="700" fill="#ffffff">Workload Identity</text>
+  <text x="904" y="288" font-size="10" fill="#475569">• Pool: project.svc.id.goog</text>
+  <text x="904" y="304" font-size="10" fill="#475569">• KSA bound to Google GSA</text>
+  <text x="904" y="320" font-size="10" fill="#16a34a">• Zero Service Account Keys</text>
+  <text x="904" y="336" font-size="10" fill="#4285f4">• Auto-Rotating OAuth2 Tokens</text>
+
+  <!-- Cloud KMS -->
+  <rect x="892" y="360" width="230" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="904" y="382" font-size="11" font-weight="700" fill="#0f172a">Cloud KMS Envelope</text>
+  <text x="904" y="400" font-size="10" fill="#475569">• Customer-Managed Key (CMEK)</text>
+  <text x="904" y="416" font-size="10" fill="#475569">• etcd Database Encryption</text>
+  <text x="904" y="432" font-size="10" fill="#16a34a">• Hardware Security Module (HSM)</text>
+
+  <!-- Cloud Operations Suite -->
+  <rect x="892" y="464" width="230" height="138" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="904" y="486" font-size="11" font-weight="700" fill="#0f172a">Cloud Operations</text>
+  <text x="904" y="504" font-size="10" fill="#475569">• Cloud Logging (System &amp; Workload)</text>
+  <text x="904" y="520" font-size="10" fill="#475569">• Cloud Monitoring (Prometheus)</text>
+  <text x="904" y="536" font-size="10" fill="#475569">• Binary Authorization Engine</text>
+  <text x="904" y="552" font-size="10" fill="#475569">• GCS FUSE CSI Driver</text>
+  <text x="904" y="572" font-size="10" font-weight="600" fill="#1a73e8">Enterprise Fleet Management</text>
+
+  <!-- Footer Specs -->
+  <rect x="40" y="652" width="1120" height="46" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="60" y="680" font-size="12" font-weight="700" fill="#0f172a">GKE Enterprise Blueprint:</text>
+  <text x="235" y="680" font-size="12" fill="#475569">Google Kubernetes Engine &gt;= 1.29</text>
+  <text x="470" y="680" font-size="12" fill="#475569">• Advanced Datapath V2</text>
+  <text x="670" y="680" font-size="12" fill="#475569">• Shielded Nodes (Secure Boot &amp; vTPM)</text>
+  <text x="950" y="680" font-size="12" font-weight="600" fill="#34a853">Zero SA Key Exposure</text>
+</svg>

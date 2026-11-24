@@ -1,0 +1,7 @@
+* text=auto eol=lf
+Makefile linguist-vendored=true
+*.tf linguist-detectable=true
+*.tofu linguist-detectable=true
+*.yaml linguist-detectable=true
+*.yml linguist-detectable=true
+*.ts linguist-detectable=true
